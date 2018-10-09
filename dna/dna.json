@@ -19,35 +19,45 @@
     },
     "Zomes": [
         {
-            "Name": "sampleZome",
-            "Description": "provide a sample zome",
-            "CodeFile": "sampleZome.js",
+            "Name": "LookUser",
+            "Description": "Look up, inspect, and publish user.",
+            "CodeFile": "LookUser.js",
             "RibosomeType": "js",
             "BridgeFuncs": null,
             "Config": null,
             "Entries": [
                 {
-                    "Name": "sampleEntry",
+                    "Name": "LookUserEntry",
                     "DataFormat": "json",
                     "Schema": "",
-                    "SchemaFile": "sampleEntry.json",
+                    "SchemaFile": "LookUserEntry.json",
                     "Sharing": "public"
                 }
             ],
             "Functions": [
                 {
-                    "Name": "sampleEntryCreate",
-                    "CallingType": "json",
+                    "Name": "lookUp",
+                    "CallingType": "string",
                     "Exposure": "public"
                 },
                 {
-                    "Name": "sampleEntryRead",
-                    "CallingType": "json",
+                    "Name": "lookUp",
+                    "CallingType": "string",
                     "Exposure": "public"
                 },
                 {
-                    "Name": "doSampleAction",
-                    "CallingType": "json",
+                    "Name": "lookUp",
+                    "CallingType": "string",
+                    "Exposure": "public"
+                },
+                {
+                    "Name": "inspect",
+                    "CallingType": "string",
+                    "Exposure": "public"
+                },
+                {
+                    "Name": "publish",
+                    "CallingType": "string",
                     "Exposure": "public"
                 }
             ]
