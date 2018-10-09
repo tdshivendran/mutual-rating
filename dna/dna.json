@@ -19,18 +19,18 @@
     },
     "Zomes": [
         {
-            "Name": "LookUser",
+            "Name": "Rating",
             "Description": "Look up, inspect, and publish user.",
-            "CodeFile": "LookUser.js",
+            "CodeFile": "Rating.js",
             "RibosomeType": "js",
             "BridgeFuncs": null,
             "Config": null,
             "Entries": [
                 {
-                    "Name": "LookUserEntry",
+                    "Name": "Rating",
                     "DataFormat": "json",
                     "Schema": "",
-                    "SchemaFile": "LookUserEntry.json",
+                    "SchemaFile": "Rating.json",
                     "Sharing": "public"
                 }
             ],
