@@ -1,47 +1,66 @@
 {
-  "Version": 1,
-  "UUID": "4a4beb46-a3cf-476f-8593-e30155186707",
-  "Name": "sampleApp",
-  "Properties": {
-    "description": "A sample app",
-    "language": "en"
-  },
-  "PropertiesSchemaFile": "properties_schema.json",
-  "DHTConfig": {
-    "HashType": "sha2-256"
-  },
-  "Zomes": [
-    {
-      "Name": "sampleZome",
-      "Description": "A sample zome",
-      "RibosomeType": "js",
-      "CodeFile": "sampleZome.js",
-      "Entries": [
+    "Version": 1,
+    "UUID": "b0bc9034-cabe-11e8-ab45-f45c89bd00e1",
+    "Name": "mutual-rating",
+    "Properties": {
+        "description": "provides an application template",
+        "language": "en"
+    },
+    "PropertiesSchemaFile": "properties_schema.json",
+    "BasedOn": "",
+    "RequiresVersion": 26,
+    "DHTConfig": {
+        "HashType": "sha2-256",
+        "RedundancyFactor": 0
+    },
+    "Progenitor": {
+        "Identity": "",
+        "PubKey": null
+    },
+    "Zomes": [
         {
-          "Name": "sampleEntry",
-          "Required": true,
-          "DataFormat": "json",
-          "Sharing": "public",
-          "SchemaFile": "sampleEntry.json"
-        },
-        {
-          "Name": "sampleLink",
-          "DataFormat": "links",
-          "Sharing": "public"
+            "Name": "Rating",
+            "Description": "Look up, inspect, and publish user.",
+            "CodeFile": "Rating.js",
+            "RibosomeType": "js",
+            "BridgeFuncs": null,
+            "Config": null,
+            "Entries": [
+                {
+                    "Name": "Rating",
+                    "DataFormat": "json",
+                    "Schema": "",
+                    "SchemaFile": "Rating.json",
+                    "Sharing": "public"
+                }
+            ],
+            "Functions": [
+                {
+                    "Name": "lookUp",
+                    "CallingType": "string",
+                    "Exposure": "public"
+                },
+                {
+                    "Name": "lookUp",
+                    "CallingType": "string",
+                    "Exposure": "public"
+                },
+                {
+                    "Name": "lookUp",
+                    "CallingType": "string",
+                    "Exposure": "public"
+                },
+                {
+                    "Name": "inspect",
+                    "CallingType": "string",
+                    "Exposure": "public"
+                },
+                {
+                    "Name": "publish",
+                    "CallingType": "string",
+                    "Exposure": "public"
+                }
+            ]
         }
-      ],
-      "Functions": [
-        {
-          "Name": "sampleEntryCreate",
-          "CallingType": "json",
-          "Exposure": "public"
-        },
-        {
-          "Name": "sampleEntryList",
-          "CallingType": "json",
-          "Exposure": "public"
-        }
-      ]
-    }
-  ]
+    ]
 }
