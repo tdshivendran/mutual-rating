@@ -3,11 +3,11 @@
 Mutual rating app on holochain network
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/HoloDen/mutual-rating.svg)
-![GitHub](https://img.shields.io/github/license/HoloDen/mutual-rating.svg)
+[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ### Prerequisites
 
@@ -21,68 +21,46 @@ Subsequent steps also assumes npm/yarn is installed.
 
 ### Installing
 
-Install the javascript/typescript packages with
+Install the javascript packages with
 
 ```
+cd frontend
 npm install
 ```
-Build the Holochain dna using
+Start frontend
 
 ```
-npm run hc:build
+npm start
 ```
-and build the UI with
+Start backend HC server on port 4141 (in a new terminal window)
 ```
-npm run build
+cd backend
+hcdev web 4141
 ```
 
-The app can now be started for development purposes using
-```
-npm run hc:dev
-```
-and opening the browser to http://localhost:4141 
+The app will be served at `http://localhost:3000 `. Frontend will hot reload, backend needs hcdev server restart after each change to the code.
 
 
 ## Folder structure
 
-Both ``hcdev`` and ``React / Redux`` require certain folder structer for compilation. Below is a quick description of folders
+Both ``backend`` and ``frontend`` require certain folder structer for compilation. Below is a quick description of folder structure:
 ```
 app
-├── @types          // Types definitions for typescript
-├── build           // Compiled code folder
-│   └── dna         // - DNA compiled from typescript
-│   └── ui          // - ui compiled from React / Redux
-├── config          // Config files for compilators
-├── dna-scr         // Source code of holochain DNA, contains DNA, Zomes and schemas
-├── scripts         // Scripts for compilers
-├── test            // Tests folder
-├── ui-src          // Source code of a front-end
-│   └── public      // Static files
-│   └── src         // React / Redux app
-└── index.js
+├── frontend       // Source code of a front-end
+│   └── public     // Static files
+│   └── src        // React / Redux app
+├── backend        // Source code of a back-end
+│   └── dna        // Holochain DNA folder
+│   └── test       // HC tests
+│   └── ui         // Frontend source if served on port 4141
+└── docs
 ``` 
 
-
-## Running the tests
-
-Run holochain test using
-
-```
-npm run hc:build && npm run hc:test
-```
-
-----
-
-Run jest front-end tests using 
-```
-npm run test
-```
 
 ## Built With
 
 * [Holochain](https://github.com/holochain/holochain-proto)
-* [Holochain template](https://github.com/holochain/hc-ts-template)
-* [Typescript](https://github.com/Microsoft/TypeScript)
+* [Create-react-app](https://github.com/facebook/create-react-app)
 * [React](https://reactjs.org/)
 * [Redux](https://redux.js.org/)
 
