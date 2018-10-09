@@ -1,0 +1,47 @@
+{
+  "Version": 1,
+  "UUID": "95654f55-cf94-467a-877e-a3fe7eb41042",
+  "Name": "Mutual rating on Go version",
+  "Properties": {
+    "description": "Mutual rating on Go version with React Redux frontend",
+    "language": "mr"
+  },
+  "PropertiesSchemaFile": "properties_schema.json",
+  "DHTConfig": {
+    "HashType": "sha2-256"
+  },
+  "Zomes": [
+    {
+      "Name": "users",
+      "Description": "Manage users",
+      "RibosomeType": "js",
+      "CodeFile": "users.js",
+      "Entries": [
+        {
+          "Name": "user",
+          "Required": true,
+          "DataFormat": "json",
+          "Sharing": "public",
+          "SchemaFile": "user.json"
+        }
+      ],
+      "Functions": [
+        {
+          "Name": "userCreate",
+          "CallingType": "json",
+          "Exposure": "public"
+        },
+        {
+          "Name": "userRead",
+          "CallingType": "json",
+          "Exposure": "public"
+        },
+        {
+          "Name": "getAllUsers",
+          "CallingType": "json",
+          "Exposure": "public"
+        }
+      ]
+    }
+  ]
+}
