@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
 import Tooltip from 'rc-tooltip';
+import button from './button.jpg';
 
 import './index.css';
 import App from './App';
@@ -32,7 +33,7 @@ ReactDOM.render(<App />, document.getElementById('root'));
 // Renders to the "slider" DOM element, just below "root" as in index.HTML
 // Makes use of the rc-slider package
 
-const wrapperStyle = { width: 600, margin: 100 };
+const wrapperStyle = { width: 600, margin: 95 };
 ReactDOM.render(
   <div>
     <div style={wrapperStyle}>
@@ -49,6 +50,11 @@ ReactDOM.render(
     </div>
   </div>,
   document.getElementById('slider')
+);
+
+ReactDOM.render(
+  <input type="image" id="submitbutton" src={button} />,
+  document.getElementById('submit')
 );
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
