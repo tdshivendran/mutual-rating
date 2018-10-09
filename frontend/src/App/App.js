@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
 import { INIT_UI } from './ducks/ui';
+import store from './../store';
+import Main from './components/Main/MainComponent';
 import './App.css';
 
 class App extends Component {
     componentDidMount() {
         setTimeout(() => {
-            window.store.dispatch({type: INIT_UI});
+            store.dispatch({type: INIT_UI});
         }, 2000);
     }
 
     render() {
         return (
-            <div>
-                Hello!
-            </div>
+            <Main/>
         );
     }
 }

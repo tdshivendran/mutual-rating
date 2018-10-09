@@ -15,7 +15,8 @@ const store = createStore(rootReducer,
     composeEnhancers(applyMiddleware(api))
 );
 
-// This line allows me to peek into store making store global
-window.store = store;
+// This line allows to peek into store from any part of application, including devTools console
+// but this is poluting global variable space and should not be used as programming pattern
+// window.store = store;
 
 export default store;
