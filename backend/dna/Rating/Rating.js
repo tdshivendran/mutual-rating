@@ -1,27 +1,92 @@
-function genesis () {
+/**
+ * "Rating" Zome Implementation/API
+ *
+ * Key Parameters
+ ************************************************************
+ * Individual Categorical Rating [ICR] (published by Rater)
+ * Aggregate Individual Rating [AIR] (each Rater's rating
+ *    aggregated over a selected Ratee)
+ * Categorical Aggregate Rating [CAR] (each Ratee's ratings
+ *    aggregated over a particular category)
+ * Aggregate Community Rating [ACR] (every Rater's rating
+ *    aggregated over a selected Ratee)
+ ************************************************************
+ */
+
+/* Genesis of the application
+ */
+function genesis()
+{
   return true;
 }
 
-// Accepts an Agent's Key (which is the Ratee), and returns the ACR for that Agent.
-/// @parms{ratee}
-/// @parms{ratee, category}
-/// @parms{ratee, rater, category}
-function lookUp(ratee){
-   var status = get(ratee) // Returns the Status entry, containing ACR.
+/* Accepts an Agent's Key (which is the Ratee), and returns the
+ * ACR for that Agent.
+ * @params{ratee}
+ */
+function computeACR(arg)
+{
+   var status = get(ratee)
    return status.ACR
 }
 
-// Accepts a Ratee Key & a Category for whom all ratings in that category are aggregated and returned (CAR is returned).
-/// @parms{ratee, category}
-function inspect(arg){
-   var ratee = API.Agent.hash
-   var rating = get(arg) // Should return an entry of containing rating according to the category.
-   return rating
+/* Accepts a Rater & Ratee's Keys, and returns the AIR for the value
+ * that Rater imparted to that Ratee.
+ * @params{ratee, category}
+ */
+function computeAIR(arg)
+{
+
+   return;
 }
 
-// Accepts a Ratee's key, and a Category, and commits that rating entry to the Rater's source chain.
-/// @parms{content,rating,timestamp}
-function publish(arg){
-   var publish_schema = {arg.content, arg.rating, arg.timestamp}
-   commit("publish", publish_schema)
+/* Accepts a Rater & Ratee's Keys, and returns the ICR for
+ * the value that Rater imparted to that Ratee for that respective category.
+ * @params{ratee, rater, category}
+ */
+function computeICR(arg)
+{
+
+   return;
+}
+
+/* Accepts a Ratee Key & a Category for whom all ratings in
+ * that category are aggregated and returned (CAR is returned).
+ * @params{ratee, category}
+ */
+function computeCAR(arg)
+{
+
+   return;
+}
+
+/* Awaits a notification from any Rater in the DHT
+ * a trigger for publishStatus()
+ * @params{ratee, category}
+ */
+function awaitRating(arg)
+{
+
+   return;
+}
+
+/* Accepts a Ratee's key, and a Category, and commits that rating
+ * entry to the Rater's source chain.
+ * @parms{Ratee, Category}
+ */
+function publishRating(arg)
+{
+    
+    return;
+}
+
+
+/* Accepts a Ratee's key, and a Category, and commits that rating
+ * entry to the Rater's source chain.
+ * @parms{entryHash}
+ */
+function publishStatus(arg)
+{
+
+   return;
 }
