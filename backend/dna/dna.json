@@ -27,32 +27,24 @@
             "Config": null,
             "Entries": [
                 {
-                    "Name": "ICR",
+                    "Name": "Rating",
                     "DataFormat": "json",
                     "Schema": "",
-                    "SchemaFile": "ICR.json",
+                    "SchemaFile": "WhatCameronWroteForRating.json",
                     "Sharing": "public"
                 },
                 {
-                    "Name": "AIR",
-                    "DataFormat": "string",
-                    "Sharing": "public"
-                },
-                {
-                    "Name": "CAR",
-                    "DataFormat": "string",
-                    "Sharing": "public"
-                },
-                {
-                    "Name": "publish",
-                    "DataFormat": "string",
+                    "Name": "Status",
+                    "DataFormat": "json",
+                    "Schema": "",
+                    "SchemaFile": "WhatCameronWroteForStatus.json",
                     "Sharing": "public"
                 }
             ],
             "Functions": [
                 {
                     "Name": "lookUp",
-                    "CallingType": "string",
+                    "CallingType": "json",
                     "Exposure": "public"
                 },
                 {

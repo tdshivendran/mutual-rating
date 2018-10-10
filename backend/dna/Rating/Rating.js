@@ -26,8 +26,10 @@ function genesis()
  */
 function computeACR(arg)
 {
-   var status = get(ratee)
-   return status.ACR
+   var entry = get(ratee, { GetMask: HC.GetMask.EntryType })
+   if(entry.EntryType == "Status"){
+       return entry.Entry.ACR
+   }
 }
 
 /* Accepts a Rater & Ratee's Keys, and returns the AIR for the value
@@ -87,6 +89,15 @@ function publishRating(arg)
  */
 function publishStatus(arg)
 {
-
+    var ratee = arg.Ratee // arg.Ratee should return ratee's key.
+    var category = arg.Category // Should return the category of ratee is rating on.
+    var Rating = {
+        "Reliability": /* Fetch value from the front end*/,
+        "Accuracys": /* Fetch value from the front end*/,
+        "Quality": /* Fetch value from the front end*/,
+        "AIR": ,
+        "Ratee": ratee.toString
+    }
+    commit("Rating", Rating)
    return;
 }
