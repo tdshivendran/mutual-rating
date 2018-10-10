@@ -1,4 +1,4 @@
-const api = ( dispatch ) => next => action => {
+const apiReducer = ( dispatch ) => next => action => {
     /*
     if (action.type === 'API') {
         const { method, url, onSuccess, onError, label } = action.payload;
@@ -14,4 +14,4 @@ const api = ( dispatch ) => next => action => {
     return next(action);
 }
 
-export default api;
+export default apiReducer;

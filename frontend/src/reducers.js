@@ -3,6 +3,7 @@ import dataReducer from './app/ducks/data';
 import uiReducer from './app/ducks/ui';
 
 // Assign reducer to different parts of the application store
+// that way they can alter only that part of the store
 const rootReducer = combineReducers({
     data : dataReducer,
     ui : uiReducer

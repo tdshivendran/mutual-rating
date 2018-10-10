@@ -1,10 +1,10 @@
 import React from 'react';
 import { render } from 'react-dom';
-import './index.css';
 import App from './app/App';
 import { Provider } from 'react-redux';
 import store from './store';
 import * as serviceWorker from './serviceWorker';
+import './bootstrap.css'; // Using Bootstrap css, for reference visit https://bootswatch.com/materia/
 
 render(
     <Provider store={store}>

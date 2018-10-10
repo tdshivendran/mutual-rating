@@ -6,13 +6,16 @@ import { createStore, applyMiddleware, compose } from 'redux';
 // Our combined reducer
 import rootReducer from './reducers';
 
-// Our middleware
-import api from './app/middleware/api';
+// Import middleware
+import apiReducer from './app/middleware/api';
+import dataReducer from './app/middleware/data';
 
 // __REDUX_DEVTOOLS_EXTENSION_COMPOSE__ - If redux devtools are installed then activate it
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+// Create store
 const store = createStore(rootReducer, 
-    composeEnhancers(applyMiddleware(api))
+    composeEnhancers(applyMiddleware(apiReducer, dataReducer))
 );
 
 // This line allows to peek into store from any part of application, including devTools console
