@@ -27,10 +27,25 @@
             "Config": null,
             "Entries": [
                 {
-                    "Name": "Rating",
+                    "Name": "ICR",
                     "DataFormat": "json",
                     "Schema": "",
-                    "SchemaFile": "Rating.json",
+                    "SchemaFile": "ICR.json",
+                    "Sharing": "public"
+                },
+                {
+                    "Name": "AIR",
+                    "DataFormat": "string",
+                    "Sharing": "public"
+                },
+                {
+                    "Name": "CAR",
+                    "DataFormat": "string",
+                    "Sharing": "public"
+                },
+                {
+                    "Name": "publish",
+                    "DataFormat": "string",
                     "Sharing": "public"
                 }
             ],
@@ -41,23 +56,13 @@
                     "Exposure": "public"
                 },
                 {
-                    "Name": "lookUp",
-                    "CallingType": "string",
-                    "Exposure": "public"
-                },
-                {
-                    "Name": "lookUp",
-                    "CallingType": "string",
-                    "Exposure": "public"
-                },
-                {
                     "Name": "inspect",
-                    "CallingType": "string",
+                    "CallingType": "json",
                     "Exposure": "public"
                 },
                 {
                     "Name": "publish",
-                    "CallingType": "string",
+                    "CallingType": "json",
                     "Exposure": "public"
                 }
             ]
