@@ -38,7 +38,16 @@ function computeACR(arg)
  */
 function computeAIR(arg)
 {
+    // Like the computeACR, if the user's hash is suppose to get us Status entry,
+    // there will be a linking between Status and Rating.
+    var rateeHash = arg.ratee    // Assuming the ratee's hash returns Status entry.
+    var raterHash = arg.category // Assuming the rater's hash returns Status entry.
 
+    /*
+        In the computeACR(), we are expecting the agent's hash to fetch us
+        Status entries; if so, how are we expected to fetch AIR from
+        Rating Entry? - Lee
+    */
     return;
 }
 
@@ -60,7 +69,7 @@ function computeCAR(arg)
 {
     var rateeStatus = get(arg.ratee) // Assuming get returns status Entry
     //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Property_accessors
-    return rateeStatus[arg.category.toString()] // Should return the category spcified in arg.;
+    return rateeStatus[arg.category.toString()] // Should return the category spcified in the bracket.
 }
 
 /* Awaits a notification from any Rater in the DHT
@@ -100,4 +109,11 @@ function publishStatus(arg)
 {
 
     return;
+}
+
+/*
+    In order for the commit() to execute, there needs to be a validateCommit().
+*/
+function validateCommit(){
+    return true;
 }
