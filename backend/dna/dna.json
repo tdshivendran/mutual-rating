@@ -53,9 +53,13 @@
                     "Exposure": "public"
                 },
                 {
-                    "Name": "publish",
+                    "Name": "publishRating",
                     "CallingType": "json",
                     "Exposure": "public"
+                },
+                {
+                    "Name": "publishStatus",
+                    ""
                 }
             ]
         }

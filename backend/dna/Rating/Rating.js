@@ -39,7 +39,7 @@ function computeACR(arg)
 function computeAIR(arg)
 {
 
-   return;
+    return;
 }
 
 /* Accepts a Rater & Ratee's Keys, and returns the ICR for
@@ -58,8 +58,8 @@ function computeICR(arg)
  */
 function computeCAR(arg)
 {
-
-   return;
+    
+    return;
 }
 
 /* Awaits a notification from any Rater in the DHT
@@ -74,12 +74,20 @@ function awaitRating(arg)
 
 /* Accepts a Ratee's key, and a Category, and commits that rating
  * entry to the Rater's source chain.
- * @param arg is JSON{Ratee, Category}
+ * @param arg is JSON{Ratee, Category[]}
  */
 function publishRating(arg)
 {
-
-    return;
+    var ratee = arg.Ratee // arg.Ratee should return ratee's key.
+    var Rating = {
+        "Reliability": arg.Category[0].toString(),
+        "Accuracy": arg.Category[1].toString(),
+        "Quality": arg.Category[2].toString(),
+        "AIR": (arg.Category[0] + arg.Category[1] + arg.Category[2]).toString(),
+        "Ratee": arg.Ratee
+    }
+    commit("Rating", Rating)
+    return {"boolean": "true"}
 }
 
 
@@ -89,15 +97,6 @@ function publishRating(arg)
  */
 function publishStatus(arg)
 {
-    var ratee = arg.Ratee // arg.Ratee should return ratee's key.
-    var category = arg.Category // Should return the category of ratee is rating on.
-    var Rating = {
-        "Reliability": /* Fetch value from the front end*/,
-        "Accuracys": /* Fetch value from the front end*/,
-        "Quality": /* Fetch value from the front end*/,
-        "AIR": ,
-        "Ratee": ratee.toString
-    }
-    commit("Rating", Rating)
-   return;
+
+    return;
 }
