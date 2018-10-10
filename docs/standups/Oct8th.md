@@ -1,4 +1,4 @@
-# Oct 8 Standup notes
+# Oct 8 Standup Notes
 
 ## Holochain Glossary
 
@@ -32,19 +32,19 @@
 
 ### Initial functionality
 
- - `lookup(Ratee) -> [ACR]`
+ - `computeACR(Ratee) -> [ACR]`
      - Accepts an Agent's Key (which is the Ratee), and returns the ACR for that Agent.
- - `lookup(Ratee, Rater) -> [AIR]`
+ - `computeAIR(Ratee, Rater) -> [AIR]`
      - Accepts a Rater & Ratee's Keys, and returns the AIR for the value that Rater imparted to that Ratee.
- - `lookup(Ratee, Rater, Category) -> [ICR]`
+ - `computeICR(Ratee, Rater, Category) -> [ICR]`
      - Accepts a Rater & `Ratee`'s Keys, and returns the `ICR` for the value that Rater imparted to that `Ratee` for that respective category.
- - `inspect(Ratee, Category) -> [CAR]`
+ - `computeCAR(Ratee, Category) -> [CAR]`
      - Accepts a `Ratee` Key & a `Category` for whom all ratings in that category are aggregated and returned (`CAR` is returned).
- - `publish(Ratee, Category)`
+ - `publishRating(Ratee, Category)`
      - Accepts a `Ratee`'s key, and a `Category`, and commits that rating entry to the Rater's source chain.
  - `awaitRating()`
      - Callback from when a Rater rates a Ratee - notifies the Ratee that it was rated, at which point a Status entry can be published.
- - `publish(entryHash)`
+ - `publishStatus(entryHash)`
      - Accepts a hash, which is the entryHash for the Rating published on the Rater's chain, and uses that to recompute the Aggregated ratings in the Status entry in the Ratee's chain, and then publishes those ratings as a Status entry.
 
 ### Entry Types
