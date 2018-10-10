@@ -43,23 +43,39 @@
             ],
             "Functions": [
                 {
-                    "Name": "lookUp",
-                    "CallingType": "json",
+                    "Name": "computeACR",
+                    "CallingType": "string",
                     "Exposure": "public"
                 },
                 {
-                    "Name": "inspect",
-                    "CallingType": "json",
+                    "Name": "computeAIR",
+                    "CallingType": "string",
+                    "Exposure": "public"
+                },
+                {
+                    "Name": "computeICR",
+                    "CallingType": "string",
+                    "Exposure": "public"
+                },
+                {
+                    "Name": "computeCAR",
+                    "CallingType": "string",
                     "Exposure": "public"
                 },
                 {
                     "Name": "publishRating",
-                    "CallingType": "json",
+                    "CallingType": "string",
+                    "Exposure": "public"
+                },
+                {
+                    "Name": "awaitRating",
+                    "CallingType": "string",
                     "Exposure": "public"
                 },
                 {
                     "Name": "publishStatus",
-                    ""
+                    "CallingType": "string",
+                    "Exposure": "public"
                 }
             ]
         }

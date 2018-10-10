@@ -58,8 +58,9 @@ function computeICR(arg)
  */
 function computeCAR(arg)
 {
-    
-    return;
+    var rateeStatus = get(arg.ratee) // Assuming get returns status Entry
+    //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Property_accessors
+    return rateeStatus[arg.category.toString()] // Should return the category spcified in arg.;
 }
 
 /* Awaits a notification from any Rater in the DHT
